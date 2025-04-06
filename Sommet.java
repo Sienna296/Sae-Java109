@@ -1,6 +1,8 @@
 package graphe.Graphe;
 
-public class Sommet extends Coord{
+import graphe.Graphe.graphe.Graphe.graphe.Coord;
+
+public class Sommet extends Coord {
 
     private char tuile;
 
