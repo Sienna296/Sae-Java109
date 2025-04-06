@@ -4,7 +4,7 @@ import graphe.Graphe.graphe.Graphe;
 
 import java.util.*;
 
-public class Grille<Coord> implements Graphe<Coord> {
+public class Grille implements Graphe {
         private int lignes;
         private int colonnes;
 

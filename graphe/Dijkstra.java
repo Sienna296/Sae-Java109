@@ -1,3 +1,5 @@
+package graphe.Graphe.graphe;
+
 import graphe.Graphe.graphe.Graphe;
 
 import java.util.*;
@@ -9,9 +11,34 @@ public class Dijkstra {
         Map<T, T> predecesseurs = new HashMap<>();
         PriorityQueue<T> file = new PriorityQueue<>(Comparator.comparingInt(distances::get));
         Set<T> visites = new HashSet<>();
+        Scanner scanner = new Scanner(System.in);
 
-        distances.put(depart, 0);
-        file.add(depart);
+        System.out.print("Entrez ligne de départ : "); //bon jsp comment sera fait le graphe mais c'est pour me donner
+        // une visu plus claire du truc donc je demande a l'utilisateur de saisir le début et l'arrivée
+        int lDepart = scanner.nextInt();
+        System.out.print("Entrez colonne de départ : ");
+        int cDepart = scanner.nextInt();
+
+        System.out.print("Entrez ligne d’arrivée : ");
+        int lArrivee = scanner.nextInt();
+        System.out.print("Entrez colonne d’arrivée : ");
+        int cArrivee = scanner.nextInt();
+
+        Coord depart = new Coord(lDepart, cDepart);
+        Coord arrivee = new Coord(lArrivee, cArrivee);
+
+        private int MAX_LIGNES;
+        private int MAX_LIGNES;
+        if (lDepart < 0 || lDepart >= MAX_LIGNES || cDepart < 0 || cDepart >= MAX_LIGNES) {
+            System.out.println("Départ invalide !");
+            return;
+        }
+
+        if (lArrivee < 0 || lArrivee >= MAX_LIGNES || cArrivee < 0 || cArrivee >= MAX_LIGNES) {
+            System.out.println("Arrivée invalide !");
+            return;
+        }
+
 
         while (!file.isEmpty()) {
             T courant = file.poll();
