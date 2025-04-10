@@ -6,21 +6,16 @@ import java.util.*;
 
 public class Grille implements Graphe {
 
-    private int lignes;
-    private int colonnes;
+    private int ligne;
+    private int colonne;
 
-    List<T> getSucc(T s) {
-        return s;
-    }
-
-
-    public Grille(int lignes) {
-        this.lignes = lignes;
-        this.colonnes = lignes;
+    public Grille(int ligne,int colonne) {
+        this.ligne = ligne;
+        this.colonne = colonne;
     }
 
         private boolean estValide(int l, int c) {
-            return l >= 0 && l < lignes && c >= 0 && c < colonnes;
+            return l >= 0 && l < ligne && c >= 0 && c < colonne;
         }
 
         @Override
@@ -40,8 +35,8 @@ public class Grille implements Graphe {
         }
 
         public void afficherGraphe() {
-            for (int l = 0; l < lignes; l++) {
-                for (int c = 0; c < colonnes; c++) {
+            for (int l = 0; l < ligne; l++) {
+                for (int c = 0; c < colonne; c++) {
                     Coord s = new Coord(l, c);
                     System.out.print(s + " → ");
                     for (Arc<Coord> arc : getSucc(s)) {

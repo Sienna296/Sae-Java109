@@ -1,12 +1,12 @@
 package graphe.Graphe.graphe;
 
 public class Coord {
-    public final int ligne;
-    public final int colonne;
+    public final int lignes;
+    public final int colonnes;
 
-    public Coord(int ligne, int colonne) {
-        this.ligne = ligne;
-        this.colonne = colonne;
+    public Coord(int lignes, int colonnes) {
+        this.lignes = lignes;
+        this.colonnes = colonnes;
     }
 
     @Override
@@ -14,16 +14,16 @@ public class Coord {
         if (this == o) return true;
         if (!(o instanceof Coord)) return false;
         Coord c = (Coord) o;
-        return ligne == c.ligne && colonne == c.colonne;
+        return lignes == c.lignes && colonnes == c.colonnes;
     }
 
     @Override
     public int hashCode() {
-        return 31 * ligne + colonne;
+        return 31 * lignes + colonnes;
     }
 
     @Override
     public String toString() {
-        return "(" + ligne + "," + colonne + ")";
+        return "(" + lignes + "," + colonnes + ")";
     }
 }
