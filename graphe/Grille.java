@@ -1,12 +1,18 @@
 package graphe.Graphe.graphe;
 
-import graphe.Graphe.graphe.Graphe;
+import graphe.Graphe;
 
 import java.util.*;
 
 public class Grille implements Graphe {
-        private int lignes;
-        private int colonnes;
+
+    private int lignes;
+    private int colonnes;
+
+    List<T> getSucc(T s) {
+        return s;
+    }
+
 
     public Grille(int lignes) {
         this.lignes = lignes;
